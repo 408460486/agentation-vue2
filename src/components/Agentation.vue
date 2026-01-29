@@ -3,7 +3,7 @@
 // Agentation.vue - Vue 2 version of PageFeedbackToolbarCSS
 // =============================================================================
 
-import { Portal } from 'portal-vue'
+import TeleportToBody from './TeleportToBody'
 import AnnotationPopup from './AnnotationPopup.vue'
 import {
   IconListSparkle,
@@ -307,7 +307,7 @@ export default {
   name: 'Agentation',
 
   components: {
-    Portal,
+    TeleportToBody,
     AnnotationPopup,
     IconListSparkle,
     IconPausePlayAnimated,
@@ -1241,7 +1241,7 @@ export default {
 </script>
 
 <template>
-  <portal to="body">
+  <TeleportToBody>
     <!-- Toolbar Wrapper -->
     <div
       :class="$style.toolbar"
@@ -1614,7 +1614,7 @@ export default {
       @submit="handleEditSubmit"
       @cancel="handleEditCancel"
     />
-  </portal>
+  </TeleportToBody>
 </template>
 
 <style module lang="scss">

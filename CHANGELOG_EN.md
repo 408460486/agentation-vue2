@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-01-29
+
+### Changed
+- Replace portal-vue with native TeleportToBody component
+- Zero runtime dependencies - only requires Vue 2.6+
+- Eliminates Vue 2.7 compatibility warnings ($attrs/$listeners readonly)
+- Reduced bundle size by removing portal-vue (~20KB)
+- Users no longer need to install portal-vue or add portal-target
+
 ## [1.0.1] - 2026-01-29
 
 ### Fixed

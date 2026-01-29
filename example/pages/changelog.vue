@@ -23,6 +23,17 @@
 
         <p v-if="release.summaryKey">{{ $t(release.summaryKey) }}</p>
 
+        <div v-if="release.changes && release.changes.length > 0" style="margin-top: 1rem">
+          <div style="font-size: 0.6875rem; font-weight: 500; color: rgba(0, 0, 0, 0.4); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5rem">
+            {{ $t('changelog.changes') }}
+          </div>
+          <ul>
+            <li v-for="(change, j) in release.changes" :key="j">
+              {{ $t(change) }}
+            </li>
+          </ul>
+        </div>
+
         <div v-if="release.features && release.features.length > 0" style="margin-top: 1rem">
           <div style="font-size: 0.6875rem; font-weight: 500; color: rgba(0, 0, 0, 0.4); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5rem">
             {{ $t('changelog.features') }}
@@ -58,6 +69,18 @@ export default {
   data() {
     return {
       releases: [
+        {
+          version: '1.1.0',
+          dateKey: 'changelog.date.v110',
+          summaryKey: 'changelog.v110.summary',
+          changes: [
+            'changelog.v110.c1',
+            'changelog.v110.c2',
+            'changelog.v110.c3',
+            'changelog.v110.c4',
+            'changelog.v110.c5',
+          ],
+        },
         {
           version: '1.0.1',
           dateKey: 'changelog.date.v101',

@@ -7,6 +7,15 @@
 
 ## [未发布]
 
+## [1.1.0] - 2026-01-29
+
+### 变更
+- 用原生 TeleportToBody 组件替代 portal-vue
+- 零运行时依赖 - 仅需要 Vue 2.6+
+- 消除 Vue 2.7 兼容性警告（$attrs/$listeners readonly）
+- 移除 portal-vue 减小打包体积（约 20KB）
+- 用户无需再安装 portal-vue 或添加 portal-target
+
 ## [1.0.1] - 2026-01-29
 
 ### 修复

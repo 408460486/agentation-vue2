@@ -4,7 +4,6 @@
 
 import Agentation from './components/Agentation.vue'
 import AnnotationPopup from './components/AnnotationPopup.vue'
-import PortalVue from 'portal-vue'
 
 // Export components
 export { Agentation, AnnotationPopup }
@@ -17,9 +16,6 @@ export * from './utils'
 
 // Vue plugin install function
 export function install(Vue) {
-  // Install portal-vue
-  Vue.use(PortalVue)
-
   // Register components globally
   Vue.component('Agentation', Agentation)
   Vue.component('AnnotationPopup', AnnotationPopup)
