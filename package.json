@@ -1,6 +1,6 @@
 {
   "name": "agentation-vue2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Visual feedback for AI coding agents - Vue 2 version",
   "main": "dist/agentation-vue2.umd.js",
   "module": "dist/agentation-vue2.esm.js",

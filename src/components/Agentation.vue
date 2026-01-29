@@ -377,6 +377,8 @@ export default {
       settings: { ...DEFAULT_SETTINGS },
       isFrozen: false,
       toolbarPosition: null,
+      // Reactive pathname for SPA navigation
+      currentPathname: typeof window !== 'undefined' ? window.location.pathname : '/',
       isDraggingToolbar: false,
       dragStartPos: null,
       dragRotation: 0,
@@ -392,7 +394,7 @@ export default {
 
   computed: {
     pathname() {
-      return typeof window !== 'undefined' ? window.location.pathname : '/'
+      return this.currentPathname
     },
 
     hasAnnotations() {
@@ -573,6 +575,20 @@ export default {
     document.addEventListener('keydown', this.handleKeyDown)
     window.addEventListener('scroll', this.handleScroll, { passive: true })
     window.addEventListener('resize', this.constrainToolbarPosition)
+    window.addEventListener('popstate', this.updatePathname)
+
+    // Listen for SPA navigation (pushState/replaceState)
+    const self = this
+    this._originalPushState = history.pushState.bind(history)
+    this._originalReplaceState = history.replaceState.bind(history)
+    history.pushState = function(...args) {
+      self._originalPushState(...args)
+      self.updatePathname()
+    }
+    history.replaceState = function(...args) {
+      self._originalReplaceState(...args)
+      self.updatePathname()
+    }
 
     // Multi-select event listeners
     document.addEventListener('mousedown', this.handleSelectionMouseDown)
@@ -597,6 +613,15 @@ export default {
     document.removeEventListener('keydown', this.handleKeyDown)
     window.removeEventListener('scroll', this.handleScroll)
     window.removeEventListener('resize', this.constrainToolbarPosition)
+    window.removeEventListener('popstate', this.updatePathname)
+
+    // Restore original history methods
+    if (this._originalPushState) {
+      history.pushState = this._originalPushState
+    }
+    if (this._originalReplaceState) {
+      history.replaceState = this._originalReplaceState
+    }
 
     document.removeEventListener('mousedown', this.handleSelectionMouseDown)
     document.removeEventListener('mousemove', this.handleSelectionMouseMove)
@@ -608,6 +633,10 @@ export default {
 
   methods: {
     hexToRgba,
+
+    updatePathname() {
+      this.currentPathname = window.location.pathname
+    },
 
     toggleActive() {
       if (this._justFinishedToolbarDrag) return

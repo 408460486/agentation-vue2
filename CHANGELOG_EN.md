@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-01-29
+
+### Fixed
+- Fix pathname not updating on SPA route navigation
+- Add listeners for pushState/replaceState and popstate events
+
 ## [1.0.0] - 2025-01-29
 
 ### Added

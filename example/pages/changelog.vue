@@ -33,6 +33,17 @@
             </li>
           </ul>
         </div>
+
+        <div v-if="release.fixes && release.fixes.length > 0" style="margin-top: 1rem">
+          <div style="font-size: 0.6875rem; font-weight: 500; color: rgba(0, 0, 0, 0.4); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5rem">
+            {{ $t('changelog.fixes') }}
+          </div>
+          <ul>
+            <li v-for="(fix, j) in release.fixes" :key="j">
+              {{ $t(fix) }}
+            </li>
+          </ul>
+        </div>
       </section>
     </article>
 
@@ -47,6 +58,15 @@ export default {
   data() {
     return {
       releases: [
+        {
+          version: '1.0.1',
+          dateKey: 'changelog.date.v101',
+          summaryKey: 'changelog.v101.summary',
+          fixes: [
+            'changelog.v101.fix1',
+            'changelog.v101.fix2',
+          ],
+        },
         {
           version: '1.0.0',
           dateKey: 'changelog.date.v100',

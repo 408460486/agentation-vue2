@@ -266,6 +266,13 @@ const messages = {
     'changelog.title': 'Changelog',
     'changelog.tagline': 'Release history',
     'changelog.features': 'Features',
+    'changelog.fixes': 'Fixes',
+
+    // Changelog v1.0.1
+    'changelog.date.v101': 'January 29, 2026',
+    'changelog.v101.summary': 'Bug fix release for SPA navigation support.',
+    'changelog.v101.fix1': 'Fix pathname not updating on SPA route navigation',
+    'changelog.v101.fix2': 'Add listeners for pushState/replaceState and popstate events',
 
     // Changelog v1.0.0
     'changelog.date.v100': 'January 29, 2026',
@@ -597,6 +604,13 @@ const messages = {
     'changelog.title': '更新日志',
     'changelog.tagline': '版本发布历史',
     'changelog.features': '功能特性',
+    'changelog.fixes': '修复',
+
+    // Changelog v1.0.1
+    'changelog.date.v101': '2026年1月29日',
+    'changelog.v101.summary': 'SPA 导航支持修复版本。',
+    'changelog.v101.fix1': '修复 SPA 路由导航时 pathname 不更新的问题',
+    'changelog.v101.fix2': '添加对 pushState/replaceState 和 popstate 事件的监听',
 
     // Changelog v1.0.0
     'changelog.date.v100': '2026年1月29日',

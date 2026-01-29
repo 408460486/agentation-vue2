@@ -89,14 +89,17 @@
         <h2>{{ $t('features.keyboardShortcuts') }}</h2>
         <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem">
           <tbody>
+            <!-- Hidden shortcuts - kept for future use
             <tr>
               <td style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06)"><code>Cmd+Shift+A</code> / <code>Ctrl+Shift+A</code></td>
               <td style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); color: rgba(0,0,0,0.5); text-align: right">{{ $t('features.shortcutToggle') }}</td>
             </tr>
+            -->
             <tr>
-              <td style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06)"><code>Esc</code></td>
-              <td style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); color: rgba(0,0,0,0.5); text-align: right">{{ $t('features.shortcutClose') }}</td>
+              <td style="padding: 0.5rem 0"><code>Esc</code></td>
+              <td style="padding: 0.5rem 0; color: rgba(0,0,0,0.5); text-align: right">{{ $t('features.shortcutClose') }}</td>
             </tr>
+            <!-- Hidden shortcuts - kept for future use
             <tr>
               <td style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06)"><code>P</code></td>
               <td style="padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); color: rgba(0,0,0,0.5); text-align: right">{{ $t('features.shortcutPause') }}</td>
@@ -113,6 +116,7 @@
               <td style="padding: 0.5rem 0"><code>X</code></td>
               <td style="padding: 0.5rem 0; color: rgba(0,0,0,0.5); text-align: right">{{ $t('features.shortcutClear') }}</td>
             </tr>
+            -->
           </tbody>
         </table>
         <p style="font-size: 0.75rem; color: rgba(0,0,0,0.5); margin-top: 0.75rem">
