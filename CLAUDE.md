@@ -104,13 +104,13 @@ npm version major  # 1.0.0 → 2.0.0 (breaking changes / 破坏性变更)
 ```bash
 cd vue2/example
 rm -f package-lock.json
-pnpm install
+npm install
 cd ..
 ```
 
 #### 6. Commit and push / 提交并推送
 ```bash
-git add package.json example/package.json CHANGELOG_EN.md CHANGELOG_CN.md example/pnpm-lock.yaml
+git add package.json example/package.json CHANGELOG_EN.md CHANGELOG_CN.md example/package-lock.json
 git commit -m "chore: release vx.y.z"
 git push
 ```
