@@ -7,7 +7,6 @@
       <nuxt />
     </main>
     <ToolbarProvider />
-    <portal-target name="body" multiple />
   </div>
 </template>
 

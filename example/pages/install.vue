@@ -8,7 +8,7 @@
 
       <section>
         <h2>{{ $t('install.installPackage') }}</h2>
-        <div class="code-block">npm install agentation-vue2 portal-vue</div>
+        <div class="code-block">npm install agentation-vue2</div>
         <p>{{ $t('install.orUse') }}</p>
       </section>
 
@@ -23,11 +23,7 @@
 &lt;/template&gt;
 
 &lt;script&gt;
-import Vue from 'vue'
-import PortalVue from 'portal-vue'
 import { Agentation } from 'agentation-vue2'
-
-Vue.use(PortalVue)
 
 export default {
   components: { Agentation },
@@ -47,7 +43,6 @@ export default {
   &lt;div&gt;
     &lt;nuxt /&gt;
     &lt;Agentation v-if="isDev" /&gt;
-    &lt;portal-target name="body" multiple /&gt;
   &lt;/div&gt;
 &lt;/template&gt;</div>
       </section>

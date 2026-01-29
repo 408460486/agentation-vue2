@@ -25,7 +25,6 @@ export default {
 
   // Plugins to run before rendering page
   plugins: [
-    '~/plugins/portal-vue.js',
     '~/plugins/i18n.js',
     '~/plugins/agentation.js'
   ],

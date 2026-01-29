@@ -267,6 +267,16 @@ const messages = {
     'changelog.tagline': 'Release history',
     'changelog.features': 'Features',
     'changelog.fixes': 'Fixes',
+    'changelog.changes': 'Changes',
+
+    // Changelog v1.1.0
+    'changelog.date.v110': 'January 29, 2026',
+    'changelog.v110.summary': 'Zero-dependency release. Replaced portal-vue with native implementation.',
+    'changelog.v110.c1': 'Replace portal-vue with native TeleportToBody component',
+    'changelog.v110.c2': 'Zero runtime dependencies - only requires Vue 2.6+',
+    'changelog.v110.c3': 'Eliminates Vue 2.7 compatibility warnings ($attrs/$listeners readonly)',
+    'changelog.v110.c4': 'Reduced bundle size by removing portal-vue (~20KB)',
+    'changelog.v110.c5': 'Users no longer need to install portal-vue or add portal-target',
 
     // Changelog v1.0.1
     'changelog.date.v101': 'January 29, 2026',
@@ -605,6 +615,16 @@ const messages = {
     'changelog.tagline': '版本发布历史',
     'changelog.features': '功能特性',
     'changelog.fixes': '修复',
+    'changelog.changes': '变更',
+
+    // Changelog v1.1.0
+    'changelog.date.v110': '2026年1月29日',
+    'changelog.v110.summary': '零依赖版本。用原生实现替代 portal-vue。',
+    'changelog.v110.c1': '用原生 TeleportToBody 组件替代 portal-vue',
+    'changelog.v110.c2': '零运行时依赖 - 仅需要 Vue 2.6+',
+    'changelog.v110.c3': '消除 Vue 2.7 兼容性警告（$attrs/$listeners readonly）',
+    'changelog.v110.c4': '移除 portal-vue 减小打包体积（约 20KB）',
+    'changelog.v110.c5': '用户无需再安装 portal-vue 或添加 portal-target',
 
     // Changelog v1.0.1
     'changelog.date.v101': '2026年1月29日',
