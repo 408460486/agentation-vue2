@@ -39,9 +39,10 @@ export default {
     transpile: ['agentation-vue2'],
 
     // Extend webpack config
-    extend(config, { isDev }) {
-      // Development: use source code directly for HMR
-      if (isDev) {
+    extend(config) {
+      // Local development/build: use source code directly
+      // Production (Cloudflare): uses npm package (no alias)
+      if (!process.env.CF_PAGES) {
         config.resolve.alias['agentation-vue2'] = require('path').resolve(__dirname, '../src/index.js')
       }
     }
