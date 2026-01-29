@@ -24,6 +24,7 @@
 
 &lt;script&gt;
 import { Agentation } from 'agentation-vue2'
+import 'agentation-vue2/dist/agentation-vue2.css'
 
 export default {
   components: { Agentation },
@@ -38,13 +39,33 @@ export default {
 
       <section>
         <h2>{{ $t('install.nuxt2') }}</h2>
-        <p>{{ $t('install.nuxt2Desc') }} <code>layouts/default.vue</code> {{ $t('install.nuxt2Desc2') }}</p>
+        <p>{{ $t('install.nuxt2Desc') }} <code>nuxt.config.js</code> {{ $t('install.nuxt2Desc2') }}</p>
+        <div class="code-block">// nuxt.config.js
+export default {
+  css: [
+    'agentation-vue2/dist/agentation-vue2.css'
+  ]
+}</div>
+        <p>{{ $t('install.nuxt2Layout') }} <code>layouts/default.vue</code>:</p>
         <div class="code-block">&lt;template&gt;
   &lt;div&gt;
     &lt;nuxt /&gt;
     &lt;Agentation v-if="isDev" /&gt;
   &lt;/div&gt;
-&lt;/template&gt;</div>
+&lt;/template&gt;
+
+&lt;script&gt;
+import { Agentation } from 'agentation-vue2'
+
+export default {
+  components: { Agentation },
+  computed: {
+    isDev() {
+      return process.env.NODE_ENV === 'development'
+    }
+  }
+}
+&lt;/script&gt;</div>
       </section>
 
       <section>
