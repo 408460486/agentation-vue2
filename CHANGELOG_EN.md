@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-01-30
+
+### Fixed
+- Fix hash route support for SPA pathname tracking (e.g., `#/path` or `#!/path`)
+- Add hashchange event listener for hash-based routing
+
+### Changed
+- Update install documentation with CSS import examples
+- Add official site link to README
+
 ## [1.1.0] - 2026-01-29
 
 ### Changed

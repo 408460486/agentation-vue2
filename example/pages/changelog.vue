@@ -70,6 +70,19 @@ export default {
     return {
       releases: [
         {
+          version: '1.1.1',
+          dateKey: 'changelog.date.v111',
+          summaryKey: 'changelog.v111.summary',
+          fixes: [
+            'changelog.v111.fix1',
+            'changelog.v111.fix2',
+          ],
+          changes: [
+            'changelog.v111.c1',
+            'changelog.v111.c2',
+          ],
+        },
+        {
           version: '1.1.0',
           dateKey: 'changelog.date.v110',
           summaryKey: 'changelog.v110.summary',

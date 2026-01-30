@@ -40,6 +40,21 @@ import { version } from '../../package.json'
 let hasPlayedEntranceAnimation = false
 
 // =============================================================================
+// Path Detection for SPA Navigation (supports both history and hash mode)
+// =============================================================================
+
+function getCurrentPath() {
+  if (typeof window === 'undefined') return '/'
+  const hash = window.location.hash
+  // Hash mode: #/path or #!/path
+  if (hash && hash.startsWith('#')) {
+    return hash.replace(/^#!?/, '') || '/'
+  }
+  // History mode: use pathname
+  return window.location.pathname
+}
+
+// =============================================================================
 // Multi-select Constants
 // =============================================================================
 
@@ -378,7 +393,7 @@ export default {
       isFrozen: false,
       toolbarPosition: null,
       // Reactive pathname for SPA navigation
-      currentPathname: typeof window !== 'undefined' ? window.location.pathname : '/',
+      currentPathname: typeof window !== 'undefined' ? getCurrentPath() : '/',
       isDraggingToolbar: false,
       dragStartPos: null,
       dragRotation: 0,
@@ -576,6 +591,7 @@ export default {
     window.addEventListener('scroll', this.handleScroll, { passive: true })
     window.addEventListener('resize', this.constrainToolbarPosition)
     window.addEventListener('popstate', this.updatePathname)
+    window.addEventListener('hashchange', this.updatePathname)
 
     // Listen for SPA navigation (pushState/replaceState)
     const self = this
@@ -614,6 +630,7 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
     window.removeEventListener('resize', this.constrainToolbarPosition)
     window.removeEventListener('popstate', this.updatePathname)
+    window.removeEventListener('hashchange', this.updatePathname)
 
     // Restore original history methods
     if (this._originalPushState) {
@@ -635,7 +652,7 @@ export default {
     hexToRgba,
 
     updatePathname() {
-      this.currentPathname = window.location.pathname
+      this.currentPathname = getCurrentPath()
     },
 
     toggleActive() {

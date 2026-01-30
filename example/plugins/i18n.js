@@ -270,6 +270,14 @@ const messages = {
     'changelog.fixes': 'Fixes',
     'changelog.changes': 'Changes',
 
+    // Changelog v1.1.1
+    'changelog.date.v111': 'January 30, 2026',
+    'changelog.v111.summary': 'Bug fix for hash route support in SPA applications.',
+    'changelog.v111.fix1': 'Fix hash route support for SPA pathname tracking (e.g., #/path or #!/path)',
+    'changelog.v111.fix2': 'Add hashchange event listener for hash-based routing',
+    'changelog.v111.c1': 'Update install documentation with CSS import examples',
+    'changelog.v111.c2': 'Add official site link to README',
+
     // Changelog v1.1.0
     'changelog.date.v110': 'January 29, 2026',
     'changelog.v110.summary': 'Zero-dependency release. Replaced portal-vue with native implementation.',
@@ -618,6 +626,14 @@ const messages = {
     'changelog.features': '功能特性',
     'changelog.fixes': '修复',
     'changelog.changes': '变更',
+
+    // Changelog v1.1.1
+    'changelog.date.v111': '2026年1月30日',
+    'changelog.v111.summary': 'SPA 应用 hash 路由支持修复版本。',
+    'changelog.v111.fix1': '修复 SPA hash 路由模式下 pathname 不更新的问题（如 #/path 或 #!/path）',
+    'changelog.v111.fix2': '添加 hashchange 事件监听以支持 hash 路由导航',
+    'changelog.v111.c1': '更新安装文档，添加 CSS 导入示例',
+    'changelog.v111.c2': '在 README 中添加官方地址链接',
 
     // Changelog v1.1.0
     'changelog.date.v110': '2026年1月29日',
