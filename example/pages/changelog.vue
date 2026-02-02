@@ -70,6 +70,14 @@ export default {
     return {
       releases: [
         {
+          version: '1.1.2',
+          dateKey: 'changelog.date.v112',
+          summaryKey: 'changelog.v112.summary',
+          features: [
+            'changelog.v112.f1',
+          ],
+        },
+        {
           version: '1.1.1',
           dateKey: 'changelog.date.v111',
           summaryKey: 'changelog.v111.summary',

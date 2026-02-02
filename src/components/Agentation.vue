@@ -546,6 +546,18 @@ export default {
       }
     },
 
+    settings: {
+      handler(newSettings) {
+        // Save settings to localStorage
+        try {
+          localStorage.setItem('feedback-toolbar-settings', JSON.stringify(newSettings))
+        } catch (e) {
+          // localStorage might be full or disabled
+        }
+      },
+      deep: true,
+    },
+
     dragStartPos(newVal, oldVal) {
       if (newVal && !oldVal) {
         document.addEventListener('mousemove', this.handleToolbarDragMove)
@@ -579,6 +591,18 @@ export default {
       const savedTheme = localStorage.getItem('feedback-toolbar-theme')
       if (savedTheme !== null) {
         this.isDarkMode = savedTheme === 'dark'
+      }
+    } catch (e) {
+      // Ignore
+    }
+
+    // Load settings
+    try {
+      const savedSettings = localStorage.getItem('feedback-toolbar-settings')
+      if (savedSettings !== null) {
+        const parsed = JSON.parse(savedSettings)
+        // Merge with defaults to handle new settings
+        this.settings = { ...DEFAULT_SETTINGS, ...parsed }
       }
     } catch (e) {
       // Ignore

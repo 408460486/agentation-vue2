@@ -270,6 +270,11 @@ const messages = {
     'changelog.fixes': 'Fixes',
     'changelog.changes': 'Changes',
 
+    // Changelog v1.1.2
+    'changelog.date.v112': 'January 30, 2026',
+    'changelog.v112.summary': 'Settings persistence to localStorage.',
+    'changelog.v112.f1': 'Persist settings to localStorage, preserving user preferences after page refresh (output detail, annotation color, auto-clear after copy, block page interactions)',
+
     // Changelog v1.1.1
     'changelog.date.v111': 'January 30, 2026',
     'changelog.v111.summary': 'Bug fix for hash route support in SPA applications.',
@@ -626,6 +631,11 @@ const messages = {
     'changelog.features': '功能特性',
     'changelog.fixes': '修复',
     'changelog.changes': '变更',
+
+    // Changelog v1.1.2
+    'changelog.date.v112': '2026年1月30日',
+    'changelog.v112.summary': '设置持久化到 localStorage。',
+    'changelog.v112.f1': '设置持久化到 localStorage，刷新页面后保留用户设置（输出详细程度、标注颜色、复制后自动清除、阻止页面交互）',
 
     // Changelog v1.1.1
     'changelog.date.v111': '2026年1月30日',
